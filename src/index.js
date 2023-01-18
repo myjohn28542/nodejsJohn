@@ -4,6 +4,7 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const authRouter = require('./router/auth')
+const createRouter = require('./router/create')
 
 const app = express()
 
@@ -13,6 +14,7 @@ app.use(bodyParser.json({limit:'30mb', extended: true}))
 app.use(bodyParser.urlencoded({limit:'30mb', extended: true}))
 
 app.use('', authRouter)
+app.use('', createRouter)
 
 app.listen(5000,() => {
     console.log('Server Running on port : 5000');

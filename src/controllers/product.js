@@ -29,8 +29,6 @@ const create = async (req, res) => {
             },(err, result) => {
                 if (err) res.status(500).json({ message: err.message})
                 else {
-                    
-                    
                     res.status(201).send(result)
                 }
             })
@@ -43,6 +41,4 @@ const create = async (req, res) => {
         return res.status(400).json({ message: error.message})
     }
 }
-module.exports = {
-    create
-}
+module.exports = create
