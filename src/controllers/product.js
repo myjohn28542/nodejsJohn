@@ -14,12 +14,10 @@ const create = async (req, res) => {
             return res.status(400).json({"detail" : "All input is required"});
         }
 
-        
-
         const oldName = await Product.find({
             name: name
         })
-        if (oldUser.length > 0) return res.status(409).json({ "detail": "User Already Exist"});
+        if (oldName.length > 0) return res.status(409).json({ "detail": "User Already Exist"});
 
 
         // let encryptedPassword = await bcrypt.hash(password, 10)
@@ -45,9 +43,6 @@ const create = async (req, res) => {
         return res.status(400).json({ message: error.message})
     }
 }
-
-
-
 module.exports = {
     create
 }
