@@ -2,6 +2,7 @@ const User = require('../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
+const create = require('./product')
 
 dotenv.config()
 const register = async (req, res) => {
@@ -77,12 +78,31 @@ const login = async (req, res) => {
             isActive: loginUser.isActive,
             token: token
         })
+        
+
+        
 
     }catch (error){
         res.status(400).json({ message: error.message})
     }
 }
+
+const retrieve = async (req, res) => {
+    try {
+        const user = User.findById(req.params.id)
+        console.log(req.params.id)
+        
+        delete user.password
+        res.status(200).json(user)
+    } catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+    
+}
+
 module.exports = {
     register,
-    login
+    login,
+    retrieve
+
 }

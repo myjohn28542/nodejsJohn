@@ -1,4 +1,4 @@
-const Product = require('../models/product')
+const Organiztion = require('../models/organiztion')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
@@ -6,29 +6,28 @@ const user = require('../models/user')
 
 dotenv.config()
 
-
-const createProduct = async (req, res) => {
+const createOrganiztion = async (req, res) => {
     try{
-        const {name, price, brand, identifier, org} = req.body
+        const { name, user} = req.body
         // const {token} = res.body
         // console.log("res: "+token)
         // console.log("res: "+JSON.stringify(token));
-        if (!(name && price && brand && identifier && org)) {
+        if (!(name && user) ) {
             return res.status(400).json({"detail" : "All input is required"});
         }
 
-        const oldName = await Product.find({
+        const oldName = await Organiztion.find({
             name: name
         })
-        if (oldName.length > 0) return res.status(409).json({ "detail": "Product Already Exist"});
+        if (oldName.length > 0) return res.status(409).json({ "detail": "Organiztion Already Exist"});
 
 
         // let encryptedPassword = await bcrypt.hash(password, 10)
 
 
         try { 
-            Product.create({
-                name, price, brand,  identifier, org
+            Organiztion.create({
+                name, user
             },(err, result) => {
                 if (err) res.status(500).json({ message: err.message})
                 else {
@@ -37,7 +36,7 @@ const createProduct = async (req, res) => {
             })
         } catch(error){
             console.log("error: "+error)
-            res.status(400).json({ message:'Error insert Product to database'})
+            res.status(400).json({ message:'Error insert Organiztion to database'})
         }
 
 
@@ -46,14 +45,14 @@ const createProduct = async (req, res) => {
     }
 }
 
-const updateProduct = async (req,res) => {
+const updateOrganiztion = async (req,res) => {
 
     try{
-        const {name, price, brand, identifier, org  } = req.body
+        const {name, user  } = req.body
         // req.user.id
         try { 
-            Product.findByIdAndUpdate(req.params.id,{
-                name, price, brand,  identifier, org
+            Organiztion.findByIdAndUpdate(req.params.id,{
+                name, user
             },(err, result) => {
                 if (err) res.status(500).json({ message: err.message})
                 else {
@@ -62,7 +61,7 @@ const updateProduct = async (req,res) => {
             })
         } catch(error){
             console.log("error: "+error)
-            res.status(400).json({ message:'Error insert Product to database'})
+            res.status(400).json({ message:'Error insert Organiztion to database'})
         }
 
 
@@ -72,15 +71,15 @@ const updateProduct = async (req,res) => {
     }
 }
 
-const deleteProduct = async (req,res) => {
+const deleteOrganiztion = async (req,res) => {
 
     try{
-        const {name, price, brand, identifier, org  } = req.body
+        const {name, user   } = req.body
         // req.user.id
         try { 
            
-            Product.findByIdAndRemove(req.params.id,{
-                name, price, brand,  identifier, org
+            Organiztion.findByIdAndRemove(req.params.id,{
+                name, user 
             },(err, result) => {
                 if (err) res.status(500).json({ message: err.message})
                 else {
@@ -89,7 +88,7 @@ const deleteProduct = async (req,res) => {
             })
         } catch(error){
             console.log("error: "+error)
-            res.status(400).json({ message:'Error insert Product to database'})
+            res.status(400).json({ message:'Error insert Organiztion to database'})
         }
 
 
@@ -99,11 +98,11 @@ const deleteProduct = async (req,res) => {
     }
 }
 
-const findByIdProduct = async (req,res) => {
+const findByIdOrganiztion = async (req,res) => {
 
     try{
         try { 
-            Product.findById(req.params.id).exec(
+            Organiztion.findById(req.params.id).exec(
                (err, result) => {
                     if (err) res.status(500).json({ message: err.message})
                     else {
@@ -114,7 +113,7 @@ const findByIdProduct = async (req,res) => {
            
         } catch(error){
             console.log("error: "+error)
-            res.status(400).json({ message:'Error insert Product to database'})
+            res.status(400).json({ message:'Error insert Organiztion to database'})
         }
 
 
@@ -124,11 +123,11 @@ const findByIdProduct = async (req,res) => {
     }
 }
 
-const findProduct = async (req,res) => {
+const findOrganiztion = async (req,res) => {
 
     try{
         try { 
-            Product.find({ },(err, result) => {
+            Organiztion.find({ },(err, result) => {
                 if (err) res.status(500).json({ message: err.message})
                 else {
                     res.status(201).send(result)
@@ -137,7 +136,7 @@ const findProduct = async (req,res) => {
            
         } catch(error){
             console.log("error: "+error)
-            res.status(400).json({ message:'Error insert Product to database'})
+            res.status(400).json({ message:'Error insert Organiztion to database'})
         }
 
 
@@ -146,11 +145,11 @@ const findProduct = async (req,res) => {
         return res.status(400).json({ message: error.message})
     }
 }
-module.exports =  {
-    createProduct,
-    updateProduct,
-    deleteProduct,
-    findByIdProduct,
-    findProduct
- }
 
+module.exports =  {
+    createOrganiztion,
+    updateOrganiztion,
+    deleteOrganiztion,
+    findOrganiztion,
+    findByIdOrganiztion
+ }

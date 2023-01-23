@@ -25,9 +25,13 @@ const ProductSchema = new Schema({
     identifier: {
         type: String,
         require: true
+    },
+    org: {
+        type: Schema.Types.ObjectId,
+        ref : 'Organiztion',
+        require: true
     }
 
 
 })
-
-module.exports = ProductSchema
+module.exports = mongoose.model("Product", ProductSchema)

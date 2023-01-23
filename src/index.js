@@ -4,7 +4,9 @@ const cors = require('cors')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const authRouter = require('./router/auth')
-const createRouter = require('./router/create')
+const authMiddleware = require('./middleware/auth')
+const productRoutes = require('./router/product')
+const organiztion = require('./router/organiztion')
 
 const app = express()
 
@@ -14,7 +16,8 @@ app.use(bodyParser.json({limit:'30mb', extended: true}))
 app.use(bodyParser.urlencoded({limit:'30mb', extended: true}))
 
 app.use('', authRouter)
-app.use('', createRouter)
+app.use('/product', authMiddleware, productRoutes)
+app.use('/organiztion', authMiddleware, organiztion)
 
 app.listen(5000,() => {
     console.log('Server Running on port : 5000');
