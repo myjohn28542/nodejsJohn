@@ -1,6 +1,6 @@
 
-#### /user
-## register user
+## /user
+### register user
 * `POST` /register
 * body  
 * require: username ,password ,email
@@ -16,7 +16,7 @@
 
     }
     ```
-## login user
+### login user
 * `POST` /login
 * body  
 * require: username ,password 
@@ -30,8 +30,8 @@
     }
     ```
 
-#### /product
-## create product
+## /product
+### create product
 * `POST` /product/create
 * body  
 * require: name ,price ,brand ,identifier ,org
@@ -51,7 +51,7 @@
     
     }
     ```
-## update product
+### update product
 * `POST` /product/update/'ID product'
 * body  
 * require: name ,price ,brand ,identifier ,org
@@ -71,19 +71,19 @@
     
     }
     ```
-## delete product
+### delete product
 * `POST` /product/delete/'ID product'
 
-## find Id
+### find Id
 * `GET` /product/findById/'ID product'
 
-## find all
+### find all
 * `GET` /product/find
 
 
 
-#### /organiztion
-## create organiztion
+## /organiztion
+### create organiztion
 * `POST` /organiztion/create
 * body  
 * require: name ,user
@@ -97,7 +97,7 @@
     
     }
     ```
-## create organiztion
+### create organiztion
 * `POST` /organiztion/update/'ID organiztion'
 * body  
 * require: name ,user
@@ -111,13 +111,13 @@
     
     }
     ```
-## delete organiztion
+### delete organiztion
 * `POST` /organiztion/delete/'ID organiztion'
 
-## find Id
+### find Id
 * `GET` /organiztion/findById/'ID organiztion'
 
-## find all
+### find all
 * `GET` /organiztion/find
 
 
