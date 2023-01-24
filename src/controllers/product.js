@@ -49,11 +49,11 @@ const createProduct = async (req, res) => {
 const updateProduct = async (req,res) => {
 
     try{
-        const {name, price, brand, identifier, org  } = req.body
+        const {name, price, brand,colors ,description, identifier, org  } = req.body
         // req.user.id
         try { 
             Product.findByIdAndUpdate(req.params.id,{
-                name, price, brand,  identifier, org
+                name, price, brand, colors,description, identifier, org
             },(err, result) => {
                 if (err) res.status(500).json({ message: err.message})
                 else {
