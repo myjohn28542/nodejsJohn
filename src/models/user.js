@@ -23,6 +23,8 @@ const UserSchema = new Schema({
         type : Boolean,
         default : true
     }
+},{
+    timestamps: true
 })
 
 UserSchema.plugin(uniqueValidator, { message: 'is already taken.' })

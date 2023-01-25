@@ -7,7 +7,7 @@ const authRouter = require('./router/auth')
 const authMiddleware = require('./middleware/auth')
 const productRoutes = require('./router/product')
 const organiztion = require('./router/organiztion')
-
+const transaction = require('./router/transaction')
 const app = express()
 
 dotenv.config()
@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({limit:'30mb', extended: true}))
 app.use('', authRouter)
 app.use('/product', authMiddleware, productRoutes)
 app.use('/organiztion', authMiddleware, organiztion)
+app.use('/transaction', authMiddleware, transaction)
 
 app.listen(5000,() => {
     console.log('Server Running on port : 5000');
