@@ -3,17 +3,13 @@ const Schema = mongoose.Schema
 
 const TransactionSchema = new Schema({
    
-    Products: [{
-        type: Schema.Types.ObjectId,
-        ref : 'Product',
-        require: true
-    }],
+    products: [Schema.Types.ObjectId],
     user: {
         type: Schema.Types.ObjectId,
         ref : 'User',
         require: true
     },
-    PaymentStatus: {
+    paymentStatus: {
         type : String
        
     },

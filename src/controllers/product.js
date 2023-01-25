@@ -9,7 +9,7 @@ dotenv.config()
 
 const createProduct = async (req, res) => {
     try{
-        const {name, price, brand, identifier, org} = req.body
+        const {name, price, brand, identifier, org, colors} = req.body
         // const {token} = res.body
         // console.log("res: "+token)
         // console.log("res: "+JSON.stringify(token));
@@ -28,7 +28,7 @@ const createProduct = async (req, res) => {
 
         try { 
             Product.create({
-                name, price, brand,  identifier, org
+                name, price, brand,  identifier, org,colors
             },(err, result) => {
                 if (err) res.status(500).json({ message: err.message})
                 else {
