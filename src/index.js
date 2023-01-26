@@ -26,14 +26,16 @@ app.use(subPath+'/product', authMiddleware, productRoutes)
 app.use(subPath+'/organiztion', authMiddleware, organiztion)
 app.use(subPath+'/transaction', authMiddleware, transaction)
 
-app.listen(5000,() => {
-    console.log('Server Running on port : 5000');
+const PORT = process.env.PORT_JOHN || 5000
+app.listen(PORT,() => {
+    console.log('Server Running on port :' + PORT);
 })
 
-const DB_USERNNAME = process.env.DB_USERNNAME || 'root'
-const DB_PASSWORD = process.env.DB_PASSWORD || 'password'
-const DB_HOST =process.env.DB_HOST || 'localhost'
-const DB_NAME = process.env.DB_NAME || 'mymongodb'
+const DB_USERNNAME = process.env.DB_USERNNAME_JOHN || 'root'
+const DB_PASSWORD = process.env.DB_PASSWORD_JOHN || 'password'
+const DB_HOST =process.env.DB_HOST_JOHN || 'localhost'
+const DB_NAME = process.env.DB_NAME_JOHN || 'mymongodb'
+
 
 const CONNECTION_URL = `mongodb://${DB_USERNNAME}:${DB_PASSWORD}@${DB_HOST}:27017/${DB_NAME}?authSource=admin`;
 
