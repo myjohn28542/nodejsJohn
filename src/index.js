@@ -15,10 +15,16 @@ dotenv.config()
 app.use(bodyParser.json({limit:'30mb', extended: true}))
 app.use(bodyParser.urlencoded({limit:'30mb', extended: true}))
 
-app.use('', authRouter)
-app.use('/product', authMiddleware, productRoutes)
-app.use('/organiztion', authMiddleware, organiztion)
-app.use('/transaction', authMiddleware, transaction)
+const subPath ='/api'
+
+app.get(subPath+'test',(req,res) => {
+    return res.send('ok')
+})
+
+app.use(subPath+'', authRouter)
+app.use(subPath+'/product', authMiddleware, productRoutes)
+app.use(subPath+'/organiztion', authMiddleware, organiztion)
+app.use(subPath+'/transaction', authMiddleware, transaction)
 
 app.listen(5000,() => {
     console.log('Server Running on port : 5000');
