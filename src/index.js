@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({limit:'30mb', extended: true}))
 
 const subPath ='/api'
 
-app.get(subPath+'test',(req,res) => {
+app.get(subPath+'/test',(req,res) => {
     return res.send('ok')
 })
 
