@@ -31,13 +31,13 @@ app.listen(PORT,() => {
     console.log('Server Running on port :' + PORT);
 })
 
-const DB_USERNNAME = process.env.DB_USERNNAME_JOHN || 'root'
+const DB_USERNAME = process.env.DB_USERNAME_JOHN || 'root'
 const DB_PASSWORD = process.env.DB_PASSWORD_JOHN || 'password'
 const DB_HOST =process.env.DB_HOST_JOHN || 'localhost'
 const DB_NAME = process.env.DB_NAME_JOHN || 'mymongodb'
 
 
-const CONNECTION_URL = `mongodb://${DB_USERNNAME}:${DB_PASSWORD}@${DB_HOST}:27017/${DB_NAME}?authSource=admin`;
+const CONNECTION_URL = `mongodb://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:27017/${DB_NAME}?authSource=admin`;
 
 mongoose.set('strictQuery', true)
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
