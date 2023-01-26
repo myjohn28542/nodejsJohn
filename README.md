@@ -1,7 +1,7 @@
 
 ## /user
 ### register user
-* `POST` /register
+* `POST` /api/register
 * body  
 * require: username ,password ,email
 
@@ -17,7 +17,7 @@
     }
     ```
 ### login user
-* `POST` /login
+* `POST` /api/login
 * body  
 * require: username ,password 
 
@@ -32,7 +32,7 @@
 
 ## /product
 ### create product
-* `POST` /product/create
+* `POST` /api/product/create
 * body  
 * require: name ,price ,brand ,identifier ,org
 * org : organiztion ID
@@ -52,7 +52,7 @@
     }
     ```
 ### update product
-* `POST` /product/update/'ID product'
+* `POST` /api/product/update/'ID product'
 * body  
 * require: name ,price ,brand ,identifier ,org
 * org : organiztion ID
@@ -72,19 +72,19 @@
     }
     ```
 ### delete product
-* `POST` /product/delete/'ID product'
+* `POST` /api/product/delete/'ID product'
 
 ### find Id
-* `GET` /product/findById/'ID product'
+* `GET` /api/product/findById/'ID product'
 
 ### find all
-* `GET` /product/find
+* `GET` /api/product/find
 
 
 
 ## /organiztion
 ### create organiztion
-* `POST` /organiztion/create
+* `POST` /api/organiztion/create
 * body  
 * require: name ,user
 * user : ID user for my organiztion
@@ -98,7 +98,7 @@
     }
     ```
 ### create organiztion
-* `POST` /organiztion/update/'ID organiztion'
+* `POST` /api/organiztion/update/'ID organiztion'
 * body  
 * require: name ,user
 * user : ID user for my organiztion
@@ -112,13 +112,13 @@
     }
     ```
 ### delete organiztion
-* `POST` /organiztion/delete/'ID organiztion'
+* `POST` /api/organiztion/delete/'ID organiztion'
 
 ### find Id
-* `GET` /organiztion/findById/'ID organiztion'
+* `GET` /api/organiztion/findById/'ID organiztion'
 
 ### find all
-* `GET` /organiztion/find
+* `GET` /api/organiztion/find
 
 
 
