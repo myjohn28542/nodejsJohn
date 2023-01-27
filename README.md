@@ -2,8 +2,8 @@
 ## /user
 ### register user
 * `POST` /api/register
-* body  
-* require: username ,password ,email
+ # Body  
+  * require: username ,password ,email
 
     ```json
     {
@@ -16,6 +16,22 @@
 
     }
     ```
+ # Response 
+    ```json
+    {
+      
+    "username": "admin",
+    "password": "$2b$10$hnqxNMFGPQ7w/b99NUk0/unfBBfdRvIk28aas8UDs.ToyIyJPL2Qi",
+    "email": "admin@admin.com",
+    "isActive": true,
+    "_id": "63d3cf0fdee6b116c8549f0e",
+    "createdAt": "2023-01-27T13:18:07.771Z",
+    "updatedAt": "2023-01-27T13:18:07.771Z",
+    "__v": 0
+
+    }
+    ```
+    
 ### login user
 * `POST` /api/login
 * body  

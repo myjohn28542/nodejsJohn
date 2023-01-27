@@ -35,7 +35,7 @@ const register = async (req, res) => {
                 else {
                     delete result.password
                     delete result.__v
-                    res.status(201).send(result)
+                    res.status(200).send(result)
                 }
             })
         } catch(error){
