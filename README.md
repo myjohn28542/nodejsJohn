@@ -1,7 +1,7 @@
 
 ## /user
 ### register user
- `POST` /api/register
+ * `POST` /api/register
  #### Body  
     * require: username ,password ,email
 
