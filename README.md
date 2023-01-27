@@ -18,6 +18,7 @@
     }
     ```
  #### Response 
+
     ```json
     {
       
@@ -36,7 +37,7 @@
 ### login user
  `POST` /api/login
  #### Body 
-    * require: username ,password 
+* require: username ,password 
 
     ```json
     {
@@ -47,6 +48,7 @@
     }
     ```
  #### Response
+
     ```json
     {
     "id": "63d3cf0fdee6b116c8549f0e",
@@ -77,6 +79,7 @@
     }
     ```
 #### Response
+
     ```json
     {
     "name": "product1",
