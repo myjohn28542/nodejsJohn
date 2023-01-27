@@ -2,7 +2,7 @@
 ## /user
 ### register user
 * `POST` /api/register
- # Body  
+ #### Body  
   * require: username ,password ,email
 
     ```json
@@ -16,7 +16,7 @@
 
     }
     ```
- # Response 
+ #### Response 
     ```json
     {
       
