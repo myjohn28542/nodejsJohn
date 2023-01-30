@@ -128,7 +128,7 @@ const findTransaction = async (req,res) => {
             Transaction.find({ },(err, result) => {
                 if (err) res.status(500).json({ message: err.message})
                 else {
-                    res.status(201).send(result)
+                    res.status(200).send(result)
                 }
             });
            

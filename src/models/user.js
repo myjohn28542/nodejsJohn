@@ -22,7 +22,12 @@ const UserSchema = new Schema({
     isActive: {
         type : Boolean,
         default : true
+    },
+    verifyEmail: {
+        type : Boolean,
+        default : false
     }
+    
 },{
     timestamps: true
 })

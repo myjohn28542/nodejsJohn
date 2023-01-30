@@ -8,6 +8,9 @@ const authMiddleware = require('./middleware/auth')
 const productRoutes = require('./router/product')
 const organiztion = require('./router/organiztion')
 const transaction = require('./router/transaction')
+
+const emailRoutes = require('./router/verifyemail')
+
 const app = express()
 
 dotenv.config()
@@ -25,6 +28,8 @@ app.use(subPath+'', authRouter)
 app.use(subPath+'/product', authMiddleware, productRoutes)
 app.use(subPath+'/organiztion', authMiddleware, organiztion)
 app.use(subPath+'/transaction', authMiddleware, transaction)
+
+app.use(subPath+'/email',  emailRoutes)
 
 const PORT = process.env.PORT_JOHN || 5000
 app.listen(PORT,() => {
