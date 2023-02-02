@@ -1,4 +1,4 @@
-## /user
+## user
 ### register user
 * `POST` /api/register
  #### Body     
@@ -15,6 +15,7 @@
 
     }
     ```
+
  * #### Response 
 
     ```json
@@ -32,7 +33,7 @@
     }
     ```
     
-### /login user
+### login user
  `POST` /api/login
  #### Body 
 * require: username ,password 
@@ -45,20 +46,24 @@
     
     }
     ```
+
  #### Response
+* Response will get id user and token for returning when invoking api 
 
     ```json
     {
+
     "id": "63d3cf0fdee6b116c8549f0e",
-    "isActive": true,
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZDNjZjBmZGVlNmIxMTZjODU0OWYwZSIsImlhdCI6MTY3NDgyNjM1NCwiZXhwIjoxNjc3NDE4MzU0fQ.UKtcOsx8Qs4c82jmNoqHjodThvRUbmfvfHp0vaD0upc"
+    "isActive": true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZDNjZjBmZGVlNmIxMTZjODU0OWYwZSIsImlhdCI6MTY3NDgyNjM1NCwiZXhwIjoxNjc3NDE4MzU0fQ.UKtcOsx8Qs4c82jmNoqHjodThvRUbmfvfHp0vaD0upc"
+
     }
     ```
 
-## /upload
+## upload
 ### upload image
  `POST` /api/upload
 #### Headers
+* Requires a token in Headers for invocation api
 
     ```json
     {
@@ -73,6 +78,8 @@
     VALUE: 'image file'
    
 #### Response
+* Response will get id image 
+    * Used for adding product, send id image as well
 
     ```json
     {
@@ -80,10 +87,11 @@
     }
     ```
 
-## /product
+## product
 ### create product
  `POST` /api/product/create
 #### Headers
+* Requires a token in Headers for invocation api
 
     ```json
     {
@@ -99,34 +107,34 @@
     ```json
     {
       
-    "name" :"product1",
-    "price" :"3000",
-    "brand" :"brand2",
-    "model" :"product model2",
-    "colors" :"red",
+    "name" :"product4",
+    "price" : 4500,
+    "brand" :"brand1",
+    "model" :"product model1",
+    "image" :"63da76aed003d603cbf622f0",
     "description" :"Easy to break",
-    "identifier" :"admin",
-    "org" :"63c7eb8b2a959fca90cd28dc",
-    "image" :"ID image"
+    "identifier" :"P0004",
+    "org" :"63d3d5d0d0496e806a162caa",
+    "category" :"category1"
     
     }
     ```
+
 #### Response
+* Response will get data
 
     ```json
     {
-    "name": "product1",
-    "price": 3000,
-    "brand": "brand2",
-    "model": "product model2",
-    "colors": [
-        "red"
-    ],
-    "identifier": "admin",
-    "org": "63c7eb8b2a959fca90cd28dc",
-    "_id": "63d3d5f0d0496e806a162cad",
-    "createdAt": "2023-01-27T13:47:28.492Z",
-    "updatedAt": "2023-01-27T13:47:28.492Z",
+    "name": "product4",
+    "price": 4500,
+    "brand": "brand1",
+    "model": "product model1",
+    "image": "63da76aed003d603cbf622f0",
+    "identifier": "P0004",
+    "org": "63d3d5d0d0496e806a162caa",
+    "_id": "63db5ca6b4eed176afc6f3dd",
+    "createdAt": "2023-02-02T06:48:06.084Z",
+    "updatedAt": "2023-02-02T06:48:06.084Z",
     "__v": 0
     }
     ```
@@ -134,21 +142,20 @@
 ### update product
  `POST` /api/product/update/'ID product'
  #### Headers
+ * Requires a token in Headers for invocation api
 
     ```json
     {
     "token" :"VALUE"
     }
     ``` 
+
 #### Body   
 * require: name ,price ,brand ,identifier ,org
-* org : organiztion ID
+* org : organiztion ID ()
 
     ```json
     {
-      
-    {
-      
     "name" :"product2",
     "price" :"4000",
     "brand" :"brand2",
@@ -157,12 +164,12 @@
     "description" :"Easy to break",
     "identifier" :"admin",
     "org" :"63c7eb8b2a959fca90cd28dc"
-    
-    }
-
     }
     ```
+
 #### Response
+* Response will get data
+
     ```json
     {
     "_id": "63d3d5f0d0496e806a162cad",
@@ -180,16 +187,21 @@
     "__v": 0
     }
     ```
+
 ### delete product
  `POST` /api/product/delete/'ID product'
- #### Headers
+#### Headers
+* Requires a token in Headers for invocation api
 
     ```json
     {
     "token" :"VALUE"
     }
     ``` 
+
 #### Response
+* Response Status:200
+
     ```json
     {
     "_id": "63d3d5f0d0496e806a162cad",
@@ -212,24 +224,31 @@
 ### find Id
 * `GET` /api/product/findById/'ID product'
 #### Headers
+* Requires a token in Headers for invocation api
 
     ```json
     {
     "token" :"VALUE"
     }
     ``` 
+
 #### Response
+* Response Status:200 and get data ID
 
 ### find all
 * `GET` /api/product/find
 #### Headers
+* Requires a token in Headers for invocation api
 
     ```json
     {
     "token" :"VALUE"
     }
     ``` 
+
 #### Response
+* Response Status:200 and get data all
+
 ```json
     {
     "_id": "63d3d929d0496e806a162cb5",
@@ -249,17 +268,18 @@
 ```
 
 
-## /organiztion
+## organiztion
 ### create organiztion
 * `POST` /api/organiztion/create
 #### Headers
+* Requires a token in Headers for invocation api
 
     ```json
     {
     "token" :"VALUE"
     }
     ``` 
-* body  
+#### Body  
 * require: name ,user
 * user : ID user for my organiztion
 
@@ -271,16 +291,21 @@
     
     }
     ```
-### create organiztion
+#### Response
+* Response Status:200 and get data 
+
+
+### update organiztion
 * `POST` /api/organiztion/update/'ID organiztion'
 #### Headers
+* Requires a token in Headers for invocation api
 
     ```json
     {
     "token" :"VALUE"
     }
     ``` 
-* body  
+#### Body  
 * require: name ,user
 * user : ID user for my organiztion
 
@@ -292,35 +317,46 @@
     
     }
     ```
+#### Response
+* Response Status:200 and get data 
+
 ### delete organiztion
 * `POST` /api/organiztion/delete/'ID organiztion'
 #### Headers
+* Requires a token in Headers for invocation api
 
     ```json
     {
     "token" :"VALUE"
     }
-    ``` 
+   ``` 
 
 ### find Id
 * `GET` /api/organiztion/findById/'ID organiztion'
 #### Headers
+* Requires a token in Headers for invocation api
 
     ```json
     {
     "token" :"VALUE"
     }
     ``` 
+#### Response
+* Response Status:200 and get data 
+
 
 ### find all
 * `GET` /api/organiztion/find
 #### Headers
+* Requires a token in Headers for invocation api
 
     ```json
     {
     "token" :"VALUE"
     }
     ``` 
+#### Response
+* Response Status:200 and get data 
 
 
 
