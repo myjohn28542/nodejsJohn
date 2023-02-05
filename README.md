@@ -33,7 +33,7 @@
     }
     ```
     
-### login user
+### /login user
  `POST` /api/login
  #### Body 
 * require: username ,password 
@@ -357,6 +357,171 @@
     ``` 
 #### Response
 * Response Status:200 and get data 
+
+## category
+### create category
+ `POST` /api/category/create
+#### Headers
+* Requires a token in Headers for invocation api
+
+    ```json
+    {
+    "token" :"VALUE"
+    }
+    ```  
+
+#### Body 
+* require: name ,org ,categoryCode
+* name : name category
+* org : organiztion ID
+* categoryCode : category code
+
+    ```json
+    {
+    "name":"perfume2",
+    "org":"63d3d5d0d0496e806a162caa",
+    "categoryCode":"C001"
+    
+    }
+    ```
+
+#### Response
+* Response Status:200 
+
+    ```json
+    {
+    "name": "perfume2",
+    "org": "63d3d5d0d0496e806a162caa",
+    "categoryCode": "C001",
+    "_id": "63df3d2b71775881061f5c14",
+    "createdAt": "2023-02-05T05:22:51.549Z",
+    "updatedAt": "2023-02-05T05:22:51.549Z",
+    "__v": 0
+    }
+    ```
+
+### update category
+ `POST` /api/category/category/'ID category'
+ #### Headers
+ * Requires a token in Headers for invocation api
+
+    ```json
+    {
+    "token" :"VALUE"
+    }
+    ``` 
+
+#### Body   
+* require: name ,org ,categoryCode
+* name : name category
+* org : organiztion ID
+* categoryCode : category code
+
+    ```json
+    {
+    "name":"perfume2",
+    "org":"63d3d5d0d0496e806a162caa",
+    "categoryCode":"C004"
+    
+    }
+    ```
+
+#### Response
+* Response Status:200 
+
+    ```json
+    {
+    "name": "perfume2",
+    "org": "63d3d5d0d0496e806a162caa",
+    "categoryCode": "C004",
+    "_id": "63df3d2b71775881061f5c14",
+    "createdAt": "2023-02-05T05:22:51.549Z",
+    "updatedAt": "2023-02-05T05:22:51.549Z",
+    "__v": 0
+    }
+    ```
+
+### delete category
+ `POST` /api/category/delete/'ID category'
+ * 'ID category' to delete
+#### Headers
+ * Requires a token in Headers for invocation api
+
+    ```json
+    {
+    "token" :"VALUE"
+    }
+    ``` 
+
+#### Response
+ * Response Status:200
+
+    ```json
+    {
+    "_id": "63de255317a146285a924d7b",
+    "name": "perfume",
+    "org": "63d3d5d0d0496e806a162caa",
+    "createdAt": "2023-02-04T09:28:51.544Z",
+    "updatedAt": "2023-02-05T05:28:18.115Z",
+    "__v": 0,
+    "categoryCode": "C004"
+    }
+    ```
+
+### find Id
+* `GET` /api/category/findById/'ID category'
+#### Headers
+* Requires a token in Headers for invocation api
+
+    ```json
+    {
+    "token" :"VALUE"
+    }
+    ``` 
+
+#### Response
+* Response Status:200 
+
+    ```json
+    {
+    "_id": "63df3d2b71775881061f5c14",
+    "name": "perfume2",
+    "org": "63d3d5d0d0496e806a162caa",
+    "categoryCode": "C001",
+    "createdAt": "2023-02-05T05:22:51.549Z",
+    "updatedAt": "2023-02-05T05:22:51.549Z",
+    "__v": 0
+    }
+    ```
+
+### find all
+* `GET` /api/category/find
+#### Headers
+* Requires a token in Headers for invocation api
+
+    ```json
+    {
+    "token" :"VALUE"
+    }
+    ``` 
+
+#### Response
+* Response Status:200 and get data all
+
+```json
+    [
+    {
+        "_id": "63df3d2b71775881061f5c14",
+        "name": "perfume2",
+        "org": "63d3d5d0d0496e806a162caa",
+        "categoryCode": "C001",
+        "createdAt": "2023-02-05T05:22:51.549Z",
+        "updatedAt": "2023-02-05T05:22:51.549Z",
+        "__v": 0
+    }
+    ]
+```
+
 
 
 
