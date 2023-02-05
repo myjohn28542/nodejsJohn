@@ -336,8 +336,7 @@
 
   ```json
   {
-    "name": "String",
-    "user": "String"
+    "name": "String"
   }
   ```
 
@@ -377,8 +376,7 @@
 
   ```json
   {
-    "name": "String",
-    "user": "String "
+    "name": "String"
   }
   ```
 
