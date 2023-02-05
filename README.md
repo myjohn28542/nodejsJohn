@@ -10,11 +10,11 @@
 
   ```json
   {
-    "username": "admin",
-    "password": "admin123",
-    "email": "admin@admin.com",
-    "firstName": "admin",
-    "lastName": "admin"
+    "username": "String",
+    "password": "String",
+    "email": "String",
+    "firstName": "String",
+    "lastName": "String"
   }
   ```
 
@@ -22,13 +22,13 @@
 
   ```json
   {
-    "username": "admin",
-    "password": "$2b$10$hnqxNMFGPQ7w/b99NUk0/unfBBfdRvIk28aas8UDs.ToyIyJPL2Qi",
-    "email": "admin@admin.com",
+    "username": "String",
+    "password": "String",
+    "email": "String",
     "isActive": true,
-    "_id": "63d3cf0fdee6b116c8549f0e",
-    "createdAt": "2023-01-27T13:18:07.771Z",
-    "updatedAt": "2023-01-27T13:18:07.771Z",
+    "_id": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
   ```
@@ -43,8 +43,8 @@
 
   ```json
   {
-    "username": "admin",
-    "password": "admin123"
+    "username": "String",
+    "password": "String"
   }
   ```
 
@@ -54,9 +54,9 @@
 
   ```json
   {
-    "id": "63d3cf0fdee6b116c8549f0e",
+    "id": "String",
     "isActive": true,
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZDNjZjBmZGVlNmIxMTZjODU0OWYwZSIsImlhdCI6MTY3NDgyNjM1NCwiZXhwIjoxNjc3NDE4MzU0fQ.UKtcOsx8Qs4c82jmNoqHjodThvRUbmfvfHp0vaD0upc"
+    "token": "String"
   }
   ```
 
@@ -72,7 +72,7 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
@@ -91,7 +91,7 @@
 
   ```json
   {
-    "id": "63da31f3e1cde7e22a87c855"
+    "id": "String"
   }
   ```
 
@@ -107,27 +107,27 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
 #### Body
 
 - require: name ,price ,brand ,identifier ,org
-- org : organiztion ID
+- org : organization ID
 - image : ID file
 
   ```json
   {
-    "name": "product4",
-    "price": 4500,
-    "brand": "brand1",
-    "model": "product model1",
-    "image": "63da76aed003d603cbf622f0",
-    "description": "Easy to break",
-    "identifier": "P0004",
-    "org": "63d3d5d0d0496e806a162caa",
-    "category": "category1"
+    "name": "String",
+    "price": Number,
+    "brand": "String",
+    "model": "String",
+    "description": "String",
+    "identifier": "String",
+    "org": "String",
+    "category": "String",
+    "image": "String"
   }
   ```
 
@@ -137,16 +137,17 @@
 
   ```json
   {
-    "name": "product4",
-    "price": 4500,
-    "brand": "brand1",
-    "model": "product model1",
-    "image": "63da76aed003d603cbf622f0",
-    "identifier": "P0004",
-    "org": "63d3d5d0d0496e806a162caa",
-    "_id": "63db5ca6b4eed176afc6f3dd",
-    "createdAt": "2023-02-02T06:48:06.084Z",
-    "updatedAt": "2023-02-02T06:48:06.084Z",
+    "name": "String",
+    "price": Number,
+    "brand": "String",
+    "model": "String",
+    "image": "String",
+    "identifier": "String",
+    "org": "String",
+    "category": "String",
+    "_id": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
   ```
@@ -161,25 +162,26 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
 #### Body
 
 - require: name ,price ,brand ,identifier ,org
-- org : organiztion ID ()
+- org : organization ID ()
 
   ```json
   {
-    "name": "product2",
-    "price": "4000",
-    "brand": "brand2",
-    "model": "product model2",
-    "colors": ["black"],
-    "description": "Easy to break",
+    "name": "String",
+    "price": Number,
+    "brand": "String",
+    "model": "String",
+    "image": "String",
+    "description": "String",
     "identifier": "admin",
-    "org": "63c7eb8b2a959fca90cd28dc"
+    "org": "String",
+    "category": "String"
   }
   ```
 
@@ -189,16 +191,17 @@
 
   ```json
   {
-    "_id": "63d3d5f0d0496e806a162cad",
-    "name": "product1",
-    "price": 3000,
-    "brand": "brand2",
-    "model": "product model2",
-    "colors": ["red"],
-    "identifier": "admin",
-    "org": "63c7eb8b2a959fca90cd28dc",
-    "createdAt": "2023-01-27T13:47:28.492Z",
-    "updatedAt": "2023-01-27T13:47:28.492Z",
+    "_id": "String",
+    "name": "String",
+    "price": Number,
+    "brand": "String",
+    "model": "String",
+    "category": "String",
+    "image": "String",
+    "identifier": "String",
+    "org": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
   ```
@@ -223,18 +226,19 @@
 
   ```json
   {
-    "_id": "63d3d5f0d0496e806a162cad",
-    "name": "product2",
-    "price": 4000,
-    "brand": "brand2",
-    "model": "product model2",
-    "colors": ["black"],
-    "identifier": "admin",
-    "org": "63c7eb8b2a959fca90cd28dc",
-    "createdAt": "2023-01-27T13:47:28.492Z",
-    "updatedAt": "2023-01-27T13:54:36.301Z",
+    "_id": "String",
+    "name": "String",
+    "price": Number,
+    "brand": "String",
+    "model": "String",
+    "category": "String",
+    "image": "String",
+    "identifier": "String",
+    "org": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0,
-    "description": "Easy to break"
+    "description": "String"
   }
   ```
 
@@ -248,7 +252,7 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
@@ -257,15 +261,17 @@
 - Response Status:200
   ```json
   {
-    "_id": "63db5b6d348d6425020c4df5",
-    "name": "product2",
+    "_id": "String",
+    "name": "String",
     "price": 3000,
-    "brand": "brand2",
-    "model": "product model2",
-    "identifier": "admin",
-    "org": "63d3d5d0d0496e806a162caa",
-    "createdAt": "2023-02-02T06:42:53.630Z",
-    "updatedAt": "2023-02-02T06:42:53.630Z",
+    "brand": "String",
+    "model": "String",
+    "category": "String",
+    "image": "String",
+    "identifier": "String",
+    "org": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
   ```
@@ -280,7 +286,7 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
@@ -291,26 +297,27 @@
 ```json
 [
   {
-    "_id": "63d3d929d0496e806a162cb5",
-    "name": "product1",
-    "price": 3000,
-    "brand": "brand2",
-    "model": "product model2",
-    "colors": ["red"],
-    "identifier": "admin",
-    "org": "63c7eb8b2a959fca90cd28dc",
-    "createdAt": "2023-01-27T14:01:13.811Z",
-    "updatedAt": "2023-01-27T14:01:13.811Z",
+    "_id": "String",
+    "name": "String",
+    "price": Number,
+    "brand": "String",
+    "model": "String",
+    "category": "String",
+    "image": "String",
+    "identifier": "String",
+    "org": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
 ]
 ```
 
-## organiztion
+## organization
 
-### create organiztion
+### create organization
 
-- **`POST`** /api/organiztion/create
+- **`POST`** /api/organization/create
 
 #### Headers
 
@@ -318,19 +325,19 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
 #### Body
 
 - require: name ,user
-- user : ID user for my organiztion
+- user : ID user for my organization
 
   ```json
   {
-    "name": "organiztion",
-    "user": "ID user"
+    "name": "String",
+    "user": "String"
   }
   ```
 
@@ -340,18 +347,18 @@
 
   ```json
   {
-    "name": "organiztion",
-    "user": "ID user",
-    "_id": "63df54476028603b06a1add4",
-    "createdAt": "2023-02-05T07:01:27.384Z",
-    "updatedAt": "2023-02-05T07:01:27.384Z",
+    "name": "String",
+    "user": "String",
+    "_id": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
   ```
 
-### update organiztion
+### update organization
 
-- **`PUT`** /api/organiztion/update/'ID organiztion'
+- **`PUT`** /api/organization/update/'ID organization'
 
 #### Headers
 
@@ -359,19 +366,19 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
 #### Body
 
 - require: name ,user
-- user : ID user for my organiztion
+- user : ID user for my organization
 
   ```json
   {
-    "name": "organiztion2",
-    "user": "ID user"
+    "name": "String",
+    "user": "String "
   }
   ```
 
@@ -380,18 +387,18 @@
 - Response Status:200
   ```json
   {
-    "_id": "63df54476028603b06a1add4",
-    "name": "johnGGG88",
-    "user": "63c7eb8b2a959fca90cd28dc",
-    "createdAt": "2023-02-05T07:01:27.384Z",
-    "updatedAt": "2023-02-05T07:01:27.384Z",
+    "_id": "String",
+    "name": "String",
+    "user": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
   ```
 
-### delete organiztion
+### delete organization
 
-- **`DELETE`** /api/organiztion/delete/'ID organiztion'
+- **`DELETE`** /api/organization/delete/'ID organization'
 
 #### Headers
 
@@ -399,7 +406,7 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
@@ -408,18 +415,18 @@
 - Response Status:200
   ```json
   {
-    "_id": "63df54476028603b06a1add4",
-    "name": "johnGGG88",
-    "user": "63c7eb8b2a959fca90cd28dc",
-    "createdAt": "2023-02-05T07:01:27.384Z",
-    "updatedAt": "2023-02-05T07:01:27.384Z",
+    "_id": "String",
+    "name": "String",
+    "user": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
   ```
 
 ### find Id
 
-- **`GET`** /api/organiztion/findById/'ID organiztion'
+- **`GET`** /api/organization/findById/'ID organization'
 
 #### Headers
 
@@ -427,7 +434,7 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
@@ -436,18 +443,18 @@
 - Response Status:200
   ```json
   {
-    "_id": "63df54476028603b06a1add4",
-    "name": "johnGGG44",
-    "user": "63c7eb8b2a959fca90cd28dc",
-    "createdAt": "2023-02-05T07:01:27.384Z",
-    "updatedAt": "2023-02-05T07:05:00.143Z",
+    "_id": "String",
+    "name": "String",
+    "user": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
   ```
 
 ### find all
 
-- **`GET`** /api/organiztion/find
+- **`GET`** /api/organization/find
 
 #### Headers
 
@@ -455,7 +462,7 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
@@ -465,19 +472,19 @@
   ```json
   [
     {
-      "_id": "63d3d5d0d0496e806a162caa",
-      "name": "johnGGG31",
-      "user": "63c7eb8b2a959fca90cd28dc",
-      "createdAt": "2023-01-27T13:46:56.604Z",
-      "updatedAt": "2023-01-27T13:46:56.604Z",
+      "_id": "String",
+      "name": "String",
+      "user": "String",
+      "createdAt": "DateTime",
+      "updatedAt": "DateTime",
       "__v": 0
     },
     {
-      "_id": "63df54476028603b06a1add4",
-      "name": "johnGGG44",
-      "user": "63c7eb8b2a959fca90cd28dc",
-      "createdAt": "2023-02-05T07:01:27.384Z",
-      "updatedAt": "2023-02-05T07:05:00.143Z",
+      "_id": "String",
+      "name": "String",
+      "user": "String",
+      "createdAt": "DateTime",
+      "updatedAt": "DateTime",
       "__v": 0
     }
   ]
@@ -495,7 +502,7 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
@@ -503,14 +510,14 @@
 
 - require: name ,org ,categoryCode
 - name : name category
-- org : organiztion ID
+- org : organization ID
 - categoryCode : category code
 
   ```json
   {
-    "name": "perfume2",
-    "org": "63d3d5d0d0496e806a162caa",
-    "categoryCode": "C001"
+    "name": "String",
+    "org": "String",
+    "categoryCode": "String"
   }
   ```
 
@@ -520,12 +527,12 @@
 
   ```json
   {
-    "name": "perfume2",
-    "org": "63d3d5d0d0496e806a162caa",
-    "categoryCode": "C001",
-    "_id": "63df3d2b71775881061f5c14",
-    "createdAt": "2023-02-05T05:22:51.549Z",
-    "updatedAt": "2023-02-05T05:22:51.549Z",
+    "name": "String",
+    "org": "String",
+    "categoryCode": "String",
+    "_id": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
   ```
@@ -540,7 +547,7 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
@@ -548,14 +555,14 @@
 
 - require: name ,org ,categoryCode
 - name : name category
-- org : organiztion ID
+- org : organization ID
 - categoryCode : category code
 
   ```json
   {
-    "name": "perfume2",
-    "org": "63d3d5d0d0496e806a162caa",
-    "categoryCode": "C004"
+    "name": "String",
+    "org": "String",
+    "categoryCode": "String"
   }
   ```
 
@@ -565,12 +572,12 @@
 
   ```json
   {
-    "name": "perfume2",
-    "org": "63d3d5d0d0496e806a162caa",
-    "categoryCode": "C004",
-    "_id": "63df3d2b71775881061f5c14",
-    "createdAt": "2023-02-05T05:22:51.549Z",
-    "updatedAt": "2023-02-05T05:22:51.549Z",
+    "name": "String",
+    "org": "String",
+    "categoryCode": "String",
+    "_id": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
   ```
@@ -587,7 +594,7 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
@@ -597,13 +604,13 @@
 
   ```json
   {
-    "_id": "63de255317a146285a924d7b",
-    "name": "perfume",
-    "org": "63d3d5d0d0496e806a162caa",
-    "createdAt": "2023-02-04T09:28:51.544Z",
-    "updatedAt": "2023-02-05T05:28:18.115Z",
+    "_id": "String",
+    "name": "String",
+    "org": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0,
-    "categoryCode": "C004"
+    "categoryCode": "String"
   }
   ```
 
@@ -617,7 +624,7 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
@@ -627,12 +634,12 @@
 
   ```json
   {
-    "_id": "63df3d2b71775881061f5c14",
-    "name": "perfume2",
-    "org": "63d3d5d0d0496e806a162caa",
-    "categoryCode": "C001",
-    "createdAt": "2023-02-05T05:22:51.549Z",
-    "updatedAt": "2023-02-05T05:22:51.549Z",
+    "_id": "String",
+    "name": "String",
+    "org": "String",
+    "categoryCode": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
   ```
@@ -647,7 +654,7 @@
 
   ```json
   {
-    "token": "VALUE"
+    "token": "String"
   }
   ```
 
@@ -658,12 +665,12 @@
 ```json
 [
   {
-    "_id": "63df3d2b71775881061f5c14",
-    "name": "perfume2",
-    "org": "63d3d5d0d0496e806a162caa",
-    "categoryCode": "C001",
-    "createdAt": "2023-02-05T05:22:51.549Z",
-    "updatedAt": "2023-02-05T05:22:51.549Z",
+    "_id": "String",
+    "name": "String",
+    "org": "String",
+    "categoryCode": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime",
     "__v": 0
   }
 ]
