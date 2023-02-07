@@ -33,7 +33,53 @@
   }
   ```
 
-### /login user
+### Verify Email
+
+- Upon successful registration, user account will be verified.
+- The code will be sent to your email.
+- Bring the code to verify email.
+
+**`POST`** /api/email/verifyEmail/`ID User`
+
+- ID User : User ID to be verify email
+
+#### Body
+
+```json
+{
+  "verifyCode": "String"
+}
+```
+
+#### Response
+
+- Response Status:200
+
+```json
+{
+  "message": "verify Email succeed"
+}
+```
+
+### Verify Email Again
+
+- Used when you want the verification code to be sent to your email again.
+
+**`POST`** /api/email/verifyEmailAgain/`ID User`
+
+- ID User : User ID to be verify email
+
+#### Response
+
+- Response Status:200
+
+```json
+{
+  "message": "Email send success"
+}
+```
+
+### login user
 
 **`POST`** /api/login
 
@@ -50,7 +96,7 @@
 
 #### Response
 
-- Response will get id user and token for returning when invoking api
+- Response Status:200
 
   ```json
   {
@@ -60,9 +106,22 @@
   }
   ```
 
+- If email is not verified
+  -Response Status:400
+  ```json
+  {
+    "message": "Please verify Email.",
+    "user": "String",
+    "verifyEmail": false
+  }
+  ```
+
 ## upload
 
 ### upload image
+
+- Used to add a picture of the product.
+- file Type jpeg,jpg,png only
 
 **`POST`** /api/upload
 
@@ -85,7 +144,7 @@
 
 #### Response
 
-- Response will get id image
+- Response Status:200
 
   - Used for adding product, send id image as well
 
@@ -95,9 +154,150 @@
   }
   ```
 
+## organization
+
+### create organization
+
+- Used to add a user's organization.
+- One user can only add one organization.
+
+- **`POST`** /api/organization/create
+
+#### Headers
+
+- Requires a token in Headers for invocation api
+
+  ```json
+  {
+    "token": "String"
+  }
+  ```
+
+#### Body
+
+- name : name organization
+
+  ```json
+  {
+    "name": "String"
+  }
+  ```
+
+#### Response
+
+- Response Status:200
+
+  ```json
+  {
+    "name": "String",
+    "user": "String",
+    "_id": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime"
+  }
+  ```
+
+### update organization
+
+- Use to update the name of organization.
+
+- **`PUT`** /api/organization/update/'ID organization'
+
+#### Headers
+
+- Requires a token in Headers for invocation api
+
+  ```json
+  {
+    "token": "String"
+  }
+  ```
+
+#### Body
+
+- name : name organization
+
+  ```json
+  {
+    "name": "String"
+  }
+  ```
+
+#### Response
+
+- Response Status:200
+  ```json
+  {
+    "_id": "String",
+    "name": "String",
+    "user": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime"
+  }
+  ```
+
+### delete organization
+
+- use delete organization
+
+- **`DELETE`** /api/organization/delete
+
+#### Headers
+
+- Requires a token in Headers for invocation api
+
+  ```json
+  {
+    "token": "String"
+  }
+  ```
+
+#### Response
+
+- Response Status:200
+  ```json
+  {
+    "_id": "String",
+    "name": "String",
+    "user": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime"
+  }
+  ```
+
+### find Id
+
+- **`GET`** /api/organization/findById
+
+#### Headers
+
+- Requires a token in Headers for invocation api
+
+  ```json
+  {
+    "token": "String"
+  }
+  ```
+
+#### Response
+
+- Response Status:200
+  ```json
+  {
+    "_id": "String",
+    "name": "String",
+    "user": "String",
+    "createdAt": "DateTime",
+    "updatedAt": "DateTime"
+  }
+  ```
+
 ## product
 
 ### create product
+
+- Used to add new products
+- Do not add products with duplicate names.
 
 **`POST`** /api/product/create
 
@@ -133,7 +333,7 @@
 
 #### Response
 
-- Response will get data
+- Response Status:200
 
   ```json
   {
@@ -153,6 +353,9 @@
   ```
 
 ### update product
+
+- Used to update information of existing products.
+- Do not update products with duplicate names.
 
 **`PUT`** /api/product/update/'ID product'
 
@@ -187,7 +390,7 @@
 
 #### Response
 
-- Response will get data
+- Response Status:200
 
   ```json
   {
@@ -201,12 +404,14 @@
     "identifier": "String",
     "org": "String",
     "createdAt": "DateTime",
-    "updatedAt": "DateTime",
-    "__v": 0
+    "updatedAt": "DateTime"
   }
   ```
 
 ### delete product
+
+- Used to delete existing product information.
+- Only the user's products can be deleted.
 
 **`DELETE`** /api/product/delete/'ID product'
 
@@ -237,12 +442,13 @@
     "org": "String",
     "createdAt": "DateTime",
     "updatedAt": "DateTime",
-    "__v": 0,
     "description": "String"
   }
   ```
 
 ### find Id
+
+- Search for products, ask for ID.
 
 **`GET`** /api/product/findById/'ID product'
 
@@ -271,12 +477,13 @@
     "identifier": "String",
     "org": "String",
     "createdAt": "DateTime",
-    "updatedAt": "DateTime",
-    "__v": 0
+    "updatedAt": "DateTime"
   }
   ```
 
 ### find all
+
+- Search all products
 
 **`GET`** /api/product/find
 
@@ -307,190 +514,17 @@
     "identifier": "String",
     "org": "String",
     "createdAt": "DateTime",
-    "updatedAt": "DateTime",
-    "__v": 0
+    "updatedAt": "DateTime"
   }
 ]
 ```
 
-## organization
-
-### create organization
-
-- **`POST`** /api/organization/create
-
-#### Headers
-
-- Requires a token in Headers for invocation api
-
-  ```json
-  {
-    "token": "String"
-  }
-  ```
-
-#### Body
-
-- require: name ,user
-- user : ID user for my organization
-
-  ```json
-  {
-    "name": "String"
-  }
-  ```
-
-#### Response
-
-- Response Status:200
-
-  ```json
-  {
-    "name": "String",
-    "user": "String",
-    "_id": "String",
-    "createdAt": "DateTime",
-    "updatedAt": "DateTime",
-    "__v": 0
-  }
-  ```
-
-### update organization
-
-- **`PUT`** /api/organization/update/'ID organization'
-
-#### Headers
-
-- Requires a token in Headers for invocation api
-
-  ```json
-  {
-    "token": "String"
-  }
-  ```
-
-#### Body
-
-- require: name ,user
-- user : ID user for my organization
-
-  ```json
-  {
-    "name": "String"
-  }
-  ```
-
-#### Response
-
-- Response Status:200
-  ```json
-  {
-    "_id": "String",
-    "name": "String",
-    "user": "String",
-    "createdAt": "DateTime",
-    "updatedAt": "DateTime",
-    "__v": 0
-  }
-  ```
-
-### delete organization
-
-- **`DELETE`** /api/organization/delete/'ID organization'
-
-#### Headers
-
-- Requires a token in Headers for invocation api
-
-  ```json
-  {
-    "token": "String"
-  }
-  ```
-
-#### Response
-
-- Response Status:200
-  ```json
-  {
-    "_id": "String",
-    "name": "String",
-    "user": "String",
-    "createdAt": "DateTime",
-    "updatedAt": "DateTime",
-    "__v": 0
-  }
-  ```
-
-### find Id
-
-- **`GET`** /api/organization/findById/'ID organization'
-
-#### Headers
-
-- Requires a token in Headers for invocation api
-
-  ```json
-  {
-    "token": "String"
-  }
-  ```
-
-#### Response
-
-- Response Status:200
-  ```json
-  {
-    "_id": "String",
-    "name": "String",
-    "user": "String",
-    "createdAt": "DateTime",
-    "updatedAt": "DateTime",
-    "__v": 0
-  }
-  ```
-
-### find all
-
-- **`GET`** /api/organization/find
-
-#### Headers
-
-- Requires a token in Headers for invocation api
-
-  ```json
-  {
-    "token": "String"
-  }
-  ```
-
-#### Response
-
-- Response Status:200
-  ```json
-  [
-    {
-      "_id": "String",
-      "name": "String",
-      "user": "String",
-      "createdAt": "DateTime",
-      "updatedAt": "DateTime",
-      "__v": 0
-    },
-    {
-      "_id": "String",
-      "name": "String",
-      "user": "String",
-      "createdAt": "DateTime",
-      "updatedAt": "DateTime",
-      "__v": 0
-    }
-  ]
-  ```
-
 ## category
 
 ### create category
+
+- used to create
+- There can't be duplicate category names in one organization.
 
 **`POST`** /api/category/create
 
@@ -537,6 +571,9 @@
 
 ### update category
 
+- Used to update category information.
+- There can't be duplicate category names in one organization.
+
 **`PUT`** /api/category/category/'ID category'
 
 #### Headers
@@ -582,6 +619,8 @@
 
 ### delete category
 
+- Used to delete category information.
+
 **`DELETE`** /api/category/delete/'ID category'
 
 - 'ID category' to delete
@@ -612,7 +651,9 @@
   }
   ```
 
-### find Id
+### find Id category
+
+- Used to search for category information by ID.
 
 - **`GET`** /api/category/findById/'ID category'
 
@@ -642,7 +683,8 @@
   }
   ```
 
-### find all
+### find all category
+- Used to search for all category information.
 
 - **`GET`** /api/category/find
 
