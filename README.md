@@ -126,7 +126,6 @@
 
 - Browse profile information.
 
-
 #### Response
 
 - Response Status:200
@@ -191,8 +190,8 @@
 
 ```json
 {
-    "password":"String",
-    "newPassword":"String"
+  "password": "String",
+  "newPassword": "String"
 }
 ```
 
@@ -202,7 +201,7 @@
 
 ```json
 {
-    "message": " reset Password succeed"
+  "message": " reset Password succeed"
 }
 ```
 
