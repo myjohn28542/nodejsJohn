@@ -116,6 +116,133 @@
   }
   ```
 
+### Profile
+
+- It's the user's profile.
+
+#### get profile
+
+**`GET`** /api/profile/find
+
+- Browse profile information.
+
+
+#### Response
+
+- Response Status:200
+
+```json
+{
+  "_id": "String",
+  "username": "String",
+  "firstName": "String",
+  "lastName": "String",
+  "email": "String",
+  "isActive": true,
+  "verifyEmail": true,
+  "createdAt": "String",
+  "updatedAt": "String"
+}
+```
+
+#### update profile
+
+**`PUT`** /api/profile/update
+
+- use profile update profile.
+
+#### Body
+
+```json
+{
+  "username": "String",
+  "firstName": "String",
+  "lastName": "String",
+  "email": "String",
+  "isActive": true
+}
+```
+
+#### Response
+
+- Response Status:200
+
+```json
+{
+  "_id": "String",
+  "username": "String",
+  "firstName": "String",
+  "lastName": "String",
+  "email": "String",
+  "isActive": true,
+  "verifyEmail": true,
+  "createdAt": "String",
+  "updatedAt": "String"
+}
+```
+
+#### Reset Password
+
+**`PUT`** /api/profile/resetPassword
+
+- use reset Password.
+
+#### Body
+
+```json
+{
+    "password":"String",
+    "newPassword":"String"
+}
+```
+
+#### Response
+
+- Response Status:200
+
+```json
+{
+    "message": " reset Password succeed"
+}
+```
+
+### login user
+
+**`POST`** /api/login
+
+#### Body
+
+- require: username ,password
+
+  ```json
+  {
+    "username": "String",
+    "password": "String"
+  }
+  ```
+
+#### Response
+
+- Response Status:200
+
+  ```json
+  {
+    "id": "String",
+    "isActive": true,
+    "token": "String"
+  }
+  ```
+
+- If email is not verified
+  -Response Status:400
+  ```json
+  {
+    "message": "Please verify Email.",
+    "user": "String",
+    "verifyEmail": false
+  }
+  ```
+
 ## upload
 
 ### upload image
@@ -684,6 +811,7 @@
   ```
 
 ### find all category
+
 - Used to search for all category information.
 
 - **`GET`** /api/category/find
